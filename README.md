@@ -124,12 +124,21 @@ The above omics.mat data is a multi-layered data with 5062 dimension, 230 sample
     ```
     plot XTest images
     ```Matlab
-    >>  P = imtile(XTest(:,:,:,1:9));
+    >>  P = imtile(XTest(:,:,:,1:9)); % these XTest samples belong to different class Labels
     >>  P = rescale(P);
     >>  figure; imshow(P);
     ```
-    
+    ![alt text](https://github.com/alok-ai-lab/DeepInsightTab2Image/blob/main/Fig3.png?raw=true)
  
+8.  Change the `tsne` distance to `cosine` and apply the same procedure
+
+    ```Matlab
+    >> [XTrain, model] = deepinsightTab2Img(data,'Dist','cosine','Blurring','yes'); % distance cosine with Blurring technique
+    ```
+
+
+
+
 ### Example 1: classification of multi-omics or multi-layered data using DeepInsight3D model
 In this example, multi-omics example data (PDX_Paclitaxel) is used which is stored in DeepInsight3D_pkg/Data folder as 'dataset1.mat'. It is split into the training set and test set. The first layer is RNA seq, second layer is CNA and the third layer is mutation. These layers are first converted to 3D images using the DeepInsight3D converter. Then the CNN net (resnet50) has been trained. The performance evaluation, in terms of accuracy and AUC, are done on the test set of the data.
 
