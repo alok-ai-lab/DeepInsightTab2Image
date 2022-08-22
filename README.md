@@ -144,7 +144,8 @@ The above omics.mat data is a multi-layered data with 5062 dimension, 230 sample
         'Method': 'tsne' | 'kpca' | 'umap' | 'pca'| 'lda' (supervised method therefore Labels are required)
           'Dist': 'euclidean' (default) | 'seuclidean' | 'cityblock' | 'chebychev' | 'minkowski' | 'mahalanobis' | 
                 'cosine' | 'correlation' | 'spearman' | 'hamming' | 
-                'jaccard' | function handle.   (Dist variable is applicable only for `tsne` Method option).
+                'jaccard' | function handle.   
+                %(Dist variable is applicable only for `tsne` Method option).
         'Labels': Labels (categorical values applicable for Method 'lda' or data augmentation 'Augment','yes')
      'PixelSize': k (default k = 224, will give 224 x 224 image size) | set 'PixelSize',[] to determine pixel frame size automatically 
          'Norm' : 1 | 2
@@ -154,7 +155,7 @@ The above omics.mat data is a multi-layered data with 5062 dimension, 230 sample
       'Blurring': 'no' (default) | 'yes'
       'SnowFall': 'no' (default) | 'yes'
           'Step': s (default s=4), s=[1,5]
-      'MPS_Fix' : 1 (default) | 0 (Pixel size will be determined automatically, managed internally)
+      'MPS_Fix' : 1 (default) | 0 %(Pixel size will be determined automatically, managed internally)
     ```
 
 
