@@ -2,6 +2,7 @@ function [XTrainNew,YTrainNew] = augmentDeepInsight2(XTrain,YTrain,num)
 % augment non-image samples to make it balance for DeepInsight procedure
 
 class = length(unique(double(YTrain)));
+classVar = unique(YTrain);
 %num=500;
 
 % for j=1:class
@@ -13,7 +14,7 @@ for j=1:class
     %if max_class(j) < num % augment
         [XTrainNewClass,YTrainNewClass] = augmentDeepInsightClass(XTrain,YTrain,num,j,inx); 
         XTrainNew = cat(4,XTrainNew,XTrainNewClass);
-        YTrainNew = [YTrainNew;YTrainNewClass];
+        YTrainNew = [YTrainNew;repelem(classVar(j),numel(YTrainNewClass))'];
     %end
 end
 XTrainNew=cat(4,XTrain,XTrainNew);
