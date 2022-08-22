@@ -133,9 +133,10 @@ The above omics.mat data is a multi-layered data with 5062 dimension, 230 sample
 8.  Change the `tsne` distance to `cosine` and apply the same procedure
 
     ```Matlab
-    >> [XTrain, model] = deepinsightTab2Img(data,'Dist','cosine','Blurring','yes'); % distance cosine with Blurring technique
+    >>  [XTrain, model] = deepinsightTab2Img(data,'Dist','cosine','Blurring','yes'); % distance cosine with Blurring technique
+    >>  figure; imshow(XTrain(:,:,:,1)); title('Dist cosine');
     ```
-
+    ![alt text](https://github.com/alok-ai-lab/DeepInsightTab2Image/blob/main/Fig4.png?raw=true)
 
 
 
