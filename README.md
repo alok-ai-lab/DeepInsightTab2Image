@@ -7,7 +7,7 @@ See details by typing `help deepinsightTab2Img` in Matlab console.
 
 To convert test or validation data use `X = deepinsightConv(data,model)`, where `model` is generated from `deepinsightTab2Img` function.
 
-New updates in this package are:
+### New updates in this package are:
 1) A number of projection methods are included: `tsne`,`umap`,`kpca`,`pca` and `lda` (a supervised method).
 2) New `blurring` technique is included. This technique populate nearby pixels of characteristic pixels. This technique has shown to improve the classification performance of CNN model significantly. 
 3) Conversion of a `d x n` matrix or a `d x n x layers` matrix (3D) is possible. Multi-omics data or multi-layered data can be converted to colored images.
@@ -16,29 +16,39 @@ New updates in this package are:
 6) Augmentation of data is possible.
 
 
-# DeepInsight3D
-DeepInsight3D package to deal with multi-omics or multi-layered data
-
-DeepInsight3D has 3 main components. 1) conversion of multi-layered non-image samples (such as multi-omics or similar tabular data) into colored image-forms (i.e. 3D image samples). 2) processing colored images to convolutional neural network (CNN). 3) Element selection via CNN, such as using class-activation maps (CAMs). 
-
-This approach builds a 3D-image by arranging similar elements (or genes) together and dissimilar apart, and then by mapping the multi-layered non-image values on to these aligned pixel locations. This approach employs CNN for element or gene selection on non-image data. 
-
 ### DeepInsight3D tested on:
 OS: Linux Ubuntu 20.04;
-Matlab version: 2021a;
+Matlab version: 2022a;
 GPU A100 (2 parallel);
 
 # Reference 
-Sharma A*, Lysenko A*, Boroevich K, Tsunoda T*, DeepInsight-3D for precision oncology: an improved anti-cancer drug response prediction from high-dimensional multi-omics data with convolutional neural networks, bioRxiv, 2022 https://doi.org/10.1101/2022.07.14.500140 
+* Sharma A*, Lysenko A*, Boroevich K, Tsunoda T*, DeepInsight-3D for precision oncology: an improved anti-cancer drug response prediction from high-dimensional multi-omics data with convolutional neural networks, bioRxiv, 2022 https://doi.org/10.1101/2022.07.14.500140 
+* Sharma et al., DeepFeature: feature selection in nonimage data using convolutional neural network, Briefings in Bioinformatics, 22(6), 2021. https://academic.oup.com/bib/article/22/6/bbab297/6343526
+* Sharma et al., DeepInsight: a methodology to transform a non-image data to an image for convolution neural network architecture, 9:11399, Scientific Reports, 2019. https://www.nature.com/articles/s41598-019-47765-6
+* Castillo-Cara M et al., A Deep Learning Approach Using Blurring Image Techniques for Bluetooth-Based Indoor Localisation, 2022, https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4180099
+* Kalkan H et al., Prediction of Alzheimer’s Disease by a Novel Image-Based Representation of Gene Expression, 13(8), Genes, 2022.
+
 
 ## Download and Install
 
-1. Download Matlab package DeepInsight3D_pkg.tar.gz or the entire DeepInsight3D_pkg folder from the link above. Store it in your working directory. Gunzip and untar as follows:
+1. Download Matlab package DeepInsightTab2Image from the link above. Store it in your working directory and quick check if the codes are working as follows:
 
     ```Matlab
-    >> gunzip DeepInsight3D_pkg.tar.gz
-    >> tar -xvf DeepInsight3D_pkg.tar
+    >> data=rand(5,10);
+    >> [XTrain,model] = deepinsightTab2Img(data);
+    %following message will be shown
+    NORM-2
+    Layer-1 data used for Cart2Pixel
+    tSNE with exact algorithm is used
+    Distance: euclidean
+    Pixels: 224 x 224
+    
+    >> Xtest = deepinsightConv(rand(5,1),model);
+    %following message will be shown
+    NORM-2
     ```
+
+The testing is successful if no errors are reported by executing the above two functions
 
 2. Download example dataset from the following link (caution: data size is 88MB):
 
