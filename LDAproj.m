@@ -5,7 +5,12 @@ J = func_LDA(data,Labels,'element');
 t=size(data,1);
 %J=kmeans(data,3);
 %T = 20; %clusters
-eva = evalclusters(J,'kmeans','CalinskiHarabasz','KList',1:3:300);
+N=300;
+if t<N
+    N=t;
+end
+    
+eva = evalclusters(J,'kmeans','CalinskiHarabasz','KList',1:3:N);
 T = eva.OptimalK;
 if t>T
     fprintf('\nt cluster for LDA %d\n',T)
