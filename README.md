@@ -79,6 +79,26 @@ The above omics.mat data is a multi-layered data with 5062 dimension, 230 sample
     % This will convert data to images (XTrain) using default parameters
     % XTrain = 224 x 224 x 3 x 220 (4-D uint8) 
     ```
+    `model` will defined all the parameters used. Since in the above case options are not changed, default paramters `model.Parm` can be seen.
+    
+    ```Matlab
+    >>  model.Parm
+    % struct with fields
+    %     Method: 'tsne'
+    %       Dist: 'euclidean'
+    %     Labels: []
+    %  PixelSize: 224
+    %       Norm: 2
+    %    Augment: 'no'
+    % AugSamples: 500 (note: only used when 'Augment' = 'yes')
+    % FeatureMap: 1 (i.e. Layer-1 is used for projection and other layers are used for mapping).
+    %   Blurring: 'no'
+    %   SnowFall: 'no'
+    %       Step: 4
+    %    MPS_Fix: 1
+    ```
+    
+    
 5.  Plot the converted sample
 
     ```Matlab
@@ -93,7 +113,14 @@ The above omics.mat data is a multi-layered data with 5062 dimension, 230 sample
     >>  figure; imshow(XTrain(:,:,:,1));
     % nearby pixels of characteristic pixels will be populated
     ```
-    
+    ![alt text](https://github.com/alok-ai-lab/DeepInsightTab2Image/blob/main/Fig2.png?raw=true)
+
+7.  Convert a validation set or a test set using `model` obtained from (6).
+
+    ```Matlab
+    >>  XTest = deepinsightConv(dataXts,model);
+    % XTest = 4-D uint8 of size 224 x 224 x 3 x 10 
+    ```
  
 ### Example 1: classification of multi-omics or multi-layered data using DeepInsight3D model
 In this example, multi-omics example data (PDX_Paclitaxel) is used which is stored in DeepInsight3D_pkg/Data folder as 'dataset1.mat'. It is split into the training set and test set. The first layer is RNA seq, second layer is CNA and the third layer is mutation. These layers are first converted to 3D images using the DeepInsight3D converter. Then the CNN net (resnet50) has been trained. The performance evaluation, in terms of accuracy and AUC, are done on the test set of the data.
