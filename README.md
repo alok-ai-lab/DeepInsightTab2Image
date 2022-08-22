@@ -98,6 +98,7 @@ The above omics.mat data is a multi-layered data with 5062 dimension, 230 sample
     %    MPS_Fix: 1
     ```
     
+    `model` also defines normalization parameters (`model.Min` and `model.Max`), pixel locations (`model.xp` and `model.yp`), images sizes and Labels (if      used)
     
 5.  Plot the converted sample
 
