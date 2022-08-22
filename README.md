@@ -8,12 +8,13 @@ See details by typing `help deepinsightTab2Img` in Matlab console.
 To convert test or validation data use `X = deepinsightConv(data,model)`, where `model` is generated from `deepinsightTab2Img` function.
 
 ### New updates in this package are:
-1) A number of projection methods are included: `tsne`,`umap`,`kpca`,`pca` and `lda` (a supervised method).
-2) New `blurring` technique is included. This technique populate nearby pixels of characteristic pixels. This technique has shown to improve the classification performance of CNN model significantly. 
-3) Conversion of a `d x n` matrix or a `d x n x layers` matrix (3D) is possible. Multi-omics data or multi-layered data can be converted to colored images.
-4) For `multi-layered` data (d x n x layers), projection of data using a particular layer (e.g. layer-1) is possible. This will find pixel locations based on layer-1, and the elements of other layers (e.g. layer-2 and layer-3) are mapped to these pixel locations.
-5) Continuing from above (4), it is possible to simultaneously use all the layers to find pixel locations. Thereafter, the elements of all the layers are mapped to the common pixel locations.
-6) Augmentation of data is possible.
+1) Package is redesigned to simplyfy the usage.
+2) A number of projection methods are included: `tsne`,`umap`,`kpca`,`pca` and `lda` (a supervised method).
+3) New `blurring` technique is included. This technique populate nearby pixels of characteristic pixels. This technique has shown to improve the classification performance of CNN model significantly. 
+4) Conversion of a `d x n` matrix or a `d x n x layers` matrix (3D) is possible. Multi-omics data or multi-layered data can be converted to colored images.
+5) For `multi-layered` data (d x n x layers), projection of data using a particular layer (e.g. layer-1) is possible. This will find pixel locations based on layer-1, and the elements of other layers (e.g. layer-2 and layer-3) are mapped to these pixel locations.
+6) Continuing from above (4), it is possible to simultaneously use all the layers to find pixel locations. Thereafter, the elements of all the layers are mapped to the common pixel locations.
+7) Augmentation of data is possible.
 
 
 ### DeepInsight3D tested on:
@@ -59,7 +60,13 @@ The testing is successful if no errors are reported by executing the above two f
     ```
 The above omics.mat data is a multi-layered data with 5062 dimension, 230 samples and 3 layers: `d=5062; n=230; layers=3`.
   
-
+3.  Execute Tab2Img function
+    
+    ```Matlab
+    >>  [XTrain, model] = deepinsightTab2Img(data);
+    % This will convert data to images (XTrain) using default parameters
+    % XTrain = 224 x 224 x 3 x 230 
+    ```
 
 ### Example 1: classification of multi-omics or multi-layered data using DeepInsight3D model
 In this example, multi-omics example data (PDX_Paclitaxel) is used which is stored in DeepInsight3D_pkg/Data folder as 'dataset1.mat'. It is split into the training set and test set. The first layer is RNA seq, second layer is CNA and the third layer is mutation. These layers are first converted to 3D images using the DeepInsight3D converter. Then the CNN net (resnet50) has been trained. The performance evaluation, in terms of accuracy and AUC, are done on the test set of the data.
