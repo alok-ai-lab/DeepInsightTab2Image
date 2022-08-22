@@ -31,7 +31,7 @@ GPU A100 (2 parallel);
 
 ## Download and Install
 
-1. Download Matlab package DeepInsightTab2Image from the link above. Store it in your working directory and quick check if the codes are working as follows:
+1. Download Matlab package DeepInsightTab2Image from the link above. Store it in your working directory and quick check if the codes are working properly:
 
     ```Matlab
     >> data=rand(5,10);
