@@ -138,6 +138,24 @@ The above omics.mat data is a multi-layered data with 5062 dimension, 230 sample
     ```
     ![alt text](https://github.com/alok-ai-lab/DeepInsightTab2Image/blob/main/Fig4.png?raw=true)
 
+9.  Many options can be changed according to the requirements. Details of options are given below.
+
+    ```Matlab
+        'Method': 'tsne' | 'kpca' | 'umap' | 'pca'| 'lda' (supervised method therefore Labels are required)
+          'Dist': 'euclidean' (default) | 'seuclidean' | 'cityblock' | 'chebychev' | 'minkowski' | 'mahalanobis' | 
+                'cosine' | 'correlation' | 'spearman' | 'hamming' | 
+                'jaccard' | function handle.   (Dist variable is applicable only for `tsne` Method option).
+        'Labels': Labels (categorical values applicable for Method 'lda' or data augmentation 'Augment','yes')
+     'PixelSize': k (default k = 224, will give 224 x 224 image size) | set 'PixelSize',[] to determine pixel frame size automatically 
+         'Norm' : 1 | 2
+       'Augment': 'no' (default) | yes
+    'AugSamples': m (m samples per class, default m is 500)
+    'FeatureMap': 0 (all layers used for projection ) | 1 (default) layer-1 projection | 2 (layer-2 projection) | 3 (layer-3 projection)
+      'Blurring': 'no' (default) | 'yes'
+      'SnowFall': 'no' (default) | 'yes'
+          'Step': s (default s=4), s=[1,5]
+      'MPS_Fix' : 1 (default) | 0 (Pixel size will be determined automatically, managed internally)
+    ```
 
 
 ### Example 1: classification of multi-omics or multi-layered data using DeepInsight3D model
