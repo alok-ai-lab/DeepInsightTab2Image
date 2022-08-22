@@ -91,6 +91,9 @@ if size(varargin{1},2) <3
     return
 end
 Parm.Xtrain=varargin{1};
+if isa(Parm.Xtrain,'double')~=1
+    Parm.Xtrain=double(Parm.Xtrain);
+end
 
 for k=2:length(Var);
     inx = Length(strcmpi(varargin,Var{k}));
