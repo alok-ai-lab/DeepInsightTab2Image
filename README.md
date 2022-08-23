@@ -106,6 +106,7 @@ The above omics.mat data is a multi-layered data with 5062 dimension, 230 sample
     >>  imshow(XTrain(:,:,:,1));
     ```
     ![alt text](https://github.com/alok-ai-lab/DeepInsightTab2Image/blob/main/Fig1.png?raw=true)
+    
     `DeepInsightTab2Img`- Method: `tsne` with Distance: `euclidean`
 
 6.  Type `help deepinsightTab2Img` for various `options`. Apply blurring technique
