@@ -225,9 +225,6 @@ The above omics.mat data is a multi-layered data with 5062 dimension, 230 sample
     
     blurring technique with step = 1 .. 5. 
 
-    
-
-## Related materials
 
 
 # Reference 
@@ -236,6 +233,8 @@ The above omics.mat data is a multi-layered data with 5062 dimension, 230 sample
 * Sharma et al., DeepInsight: a methodology to transform a non-image data to an image for convolution neural network architecture, 9:11399, Scientific Reports, 2019. https://www.nature.com/articles/s41598-019-47765-6
 * Castillo-Cara M et al., A Deep Learning Approach Using Blurring Image Techniques for Bluetooth-Based Indoor Localisation, 2022, https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4180099
 * Kalkan H et al., Prediction of Alzheimer’s Disease by a Novel Image-Based Representation of Gene Expression, 13(8), Genes, 2022.
+
+## Related materials
 
 ### DeepInsight YouTube
 
