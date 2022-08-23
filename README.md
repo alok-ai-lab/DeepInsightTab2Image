@@ -140,7 +140,7 @@ The above omics.mat data is a multi-layered data with 5062 dimension, 230 sample
     
     `DeepInsightTab2Img`- distance: `cosine`
 
-9.  Many options can be changed according to the requirements. Details of options are given below.
+9.  Many options can be changed according to the requirements. Details of options for `deepinsightTab2Img` are given below.
 
     ```Matlab
         'Method': 'tsne' | 'kpca' | 'umap' | 'pca'| 'lda' (supervised method therefore Labels are required)
@@ -158,6 +158,21 @@ The above omics.mat data is a multi-layered data with 5062 dimension, 230 sample
       'SnowFall': 'no' (default) | 'yes'
           'Step': s (default s=4), s=[1,5]
       'MPS_Fix' : 1 (default) | 0 %(Pixel size will be determined automatically, managed internally)
+    ```
+
+    Options for `deepinsightConv` are given below
+    
+    ```Matlab
+    >>  [ImgData, model] = deepinsightConv(data,model,options);
+    options can be
+    'AugSamples': k (defined k>0 to be augmented per class)
+    'Labels': provide labels for validation data (labels_validation)
+    
+    >>  [ImgData, model] = deepinsightConv(data,model,'AugSamples',50,'Labels',labels_validation);
+    % model.Validation = 
+    %  struct with field
+    %  AugSamples:50
+    %.   Labels: px1 categorical 
     ```
 
 10. Apply 'umap' projection method. Note for 'umap', option 'Dist' is not required. Also note, that 'umap' uses Python or R code. Therefore, first install necessary Python/R packages. For Python the following packages are used `numpy`, `sys` and `umap`.
