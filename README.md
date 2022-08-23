@@ -96,7 +96,7 @@ The above omics.mat data is a multi-layered data with 5062 dimension, 230 sample
 5.  Plot the converted sample
 
     ```Matlab
-    >>  imshow(XTrain(:,:,:,1));
+    >>  figure; imshow(XTrain(:,:,:,1));
     ```
     ![alt text](https://github.com/alok-ai-lab/DeepInsightTab2Image/blob/main/Fig1.png?raw=true)
     
