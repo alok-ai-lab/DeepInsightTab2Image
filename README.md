@@ -105,7 +105,7 @@ The above omics.mat data is a multi-layered data with 5062 dimension, 230 sample
 6.  Type `help deepinsightTab2Img` for various `options`. Apply blurring technique
 
     ```Matlab
-    >>  [XTrain, model] = deepinsight(data,'Blurring','yes');
+    >>  [XTrain, model] = deepinsightTab2Img(data,'Blurring','yes');
     >>  figure; imshow(XTrain(:,:,:,1));
     % nearby pixels of characteristic pixels will be populated
     ```
