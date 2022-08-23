@@ -158,6 +158,27 @@ The above omics.mat data is a multi-layered data with 5062 dimension, 230 sample
       'MPS_Fix' : 1 (default) | 0 %(Pixel size will be determined automatically, managed internally)
     ```
 
+10. Apply 'umap' projection method. Note for 'umap', option 'Dist' is not required. Also note, that 'umap' uses Python or R code. Therefore, first install necessary Python/R packages. For Python the following packages are used `numpy`, `sys` and `umap`.
+
+    Moreover, change the default `PixelSize` to 50
+
+    ```Matlab
+    >>  [XTrain, model] = deepinsightTab2Img(data,'Method','umap','PixelSize',50);
+    % Layer-1 data used for Cart2Pixel
+    % umap is used
+    % Pixels: 50 x 50 
+    ```
+    
+    Plot images of class-1 and class-2
+    ```Matlab
+    >>  numObservations = [1:8,213:220]; % Labels positions 1:8 belong to class-1 and 213P1=:220 belong to class-2
+    >>  P1 = imtile(XTrain(:,:,:,numObservations),'Frames',1:8,'GridSize',[2 4]);
+    >>  P2 = imtile(XTrain(:,:,:,numObservations),'Frames',9:16,'GridSize',[2 4]);
+    >>  figure; subplot(2,1,1);imshow(P1); title(['class ',num2str(double(Labels(numObservations(1))))]);
+    >>  subplot(2,1,2);imshow(P2); title(['class ',num2str(double(Labels(numObservations(9))))]);
+    ```
+    
+
 
 ### Example 1: classification of multi-omics or multi-layered data using DeepInsight3D model
 In this example, multi-omics example data (PDX_Paclitaxel) is used which is stored in DeepInsight3D_pkg/Data folder as 'dataset1.mat'. It is split into the training set and test set. The first layer is RNA seq, second layer is CNA and the third layer is mutation. These layers are first converted to 3D images using the DeepInsight3D converter. Then the CNN net (resnet50) has been trained. The performance evaluation, in terms of accuracy and AUC, are done on the test set of the data.
