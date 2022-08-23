@@ -225,7 +225,25 @@ The above omics.mat data is a multi-layered data with 5062 dimension, 230 sample
     
     blurring technique with step = 1 .. 5. 
 
+13. Augmenting Validation data
 
+    If it is required to augment validation data as well then `deepinsightConv` can be used as
+    
+    ```Matlab
+    >>  [XValidation, model] = deepinsightConv(data_validation,'AugSamples',k,'Labels',labels_validation);
+    % size of XValidation would be M x M x layers x r, 
+    %    where r = number of original validation samples + augmented validation samples
+    ```
+    
+    The details about validation can be access by
+    ```Matlab
+    >>  model.Validation
+    % struct with feilds
+    % AugSamples: k
+    %     Labels: r (original + augmented samples)
+    %  orgLabels: number of validation samples (before augmentation)
+    ```
+ 
 
 # Reference 
 * Sharma A*, Lysenko A*, Boroevich K, Tsunoda T*, DeepInsight-3D for precision oncology: an improved anti-cancer drug response prediction from high-dimensional multi-omics data with convolutional neural networks, bioRxiv, 2022 https://doi.org/10.1101/2022.07.14.500140 
