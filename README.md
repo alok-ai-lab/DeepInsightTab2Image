@@ -220,6 +220,9 @@ The above omics.mat data is a multi-layered data with 5062 dimension, 230 sample
     >>      subplot(2,3,step+1); imagesc(MB); title(['Blurring step ',num2str(step)]);
     >>  end
     ```
+    ![alt text](https://github.com/alok-ai-lab/DeepInsightTab2Image/blob/main/Fig7.png?raw=true)
+    
+    blurring technique with step = 1 .. 5. 
 
     
 
