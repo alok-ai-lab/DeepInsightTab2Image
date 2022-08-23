@@ -44,7 +44,7 @@ GPU A100 (2 parallel);
 
 The testing is successful if no errors are reported by executing the above two functions
 
-2. Load the example dataset omics.mat (data size is 8.2M):
+2. Clear the Workspace and `Load` the example dataset omics.mat (data size is 8.2M):
 
     ```Matlab
     >>  load omics.mat
