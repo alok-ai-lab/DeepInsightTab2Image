@@ -206,6 +206,22 @@ The above omics.mat data is a multi-layered data with 5062 dimension, 230 sample
     ![alt text](https://github.com/alok-ai-lab/DeepInsightTab2Image/blob/main/Fig6.png?raw=true)
     
     `deepinsightTab2Img`- projection method `lda` with augmentated samples
+    
+12. Effect of using blurring technique with an illustration
+
+    Generate an artificial image
+    ```Matlab
+    >>  M = ones(15,15);
+    >>  row = [4,9]; col = [4, 7]; % define row and columns for characteristic pixel locations
+    >>  M(sub2ind(size(M),row,col)) = 0.4; % define characteristic pixel values
+    >>  figure; subplot(2,3,1); imagesc(M); title('original image')
+    >>  for step=1:5
+    >>      MB = BlurTech(M,row,col,step);
+    >>      subplot(2,3,step+1); imagesc(MB); title(['Blurring step ',num2str(step)]);
+    >>  end
+    ```
+
+    
 
 ## Related materials
 
