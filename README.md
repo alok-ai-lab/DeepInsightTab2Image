@@ -47,7 +47,7 @@ The testing is successful if no errors are reported by executing the above two f
 2. Load the example dataset omics.mat (data size is 8.2M):
 
     ```Matlab
-    >>  load omics.data
+    >>  load omics.mat
     % data = 5062 x 230 x 3 single
     % Labels = 230 x 1 categorical
     ```
