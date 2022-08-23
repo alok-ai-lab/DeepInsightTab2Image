@@ -177,7 +177,7 @@ The above omics.mat data is a multi-layered data with 5062 dimension, 230 sample
     >>  figure; subplot(2,1,1);imshow(P1); title(['class ',num2str(double(Labels(numObservations(1))))]);
     >>  subplot(2,1,2);imshow(P2); title(['class ',num2str(double(Labels(numObservations(9))))]);
     ```
-    
+    ![alt text](https://github.com/alok-ai-lab/DeepInsightTab2Image/blob/main/Fig5.png?raw=true)
 
 
 ### Example 1: classification of multi-omics or multi-layered data using DeepInsight3D model
