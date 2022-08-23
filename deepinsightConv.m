@@ -1,5 +1,5 @@
 function [Xtv,model] = deepinsightConv(data,model,varargin)
-% [Xtv,model] = deepinsightConv(data,model)
+% [Xtv,model] = deepinsightConv(data,model,options)
 %
 % Convert tabular data to images using model description.
 %
@@ -14,6 +14,7 @@ function [Xtv,model] = deepinsightConv(data,model,varargin)
 %
 %   model <- is generated from deepinsightTab2Img function
 %
+% Options:
 %   NOTE: if data is for creating a Validation Set and Augmentation of 
 %   data is required then provide Labels for this data by typing:
 %
@@ -37,7 +38,7 @@ function [Xtv,model] = deepinsightConv(data,model,varargin)
 %   
 %  model <- if data is augmented (in case of validation set) then augmented
 %  data information can be retrieved from model, such as new validation
-%  labels defined in model.ValLabels.
+%  labels defined in model.Validation.
 %
 %  Ref: DeepInsight projects
 %   [1] DeepInsight, 2019, Sci. Rep.
