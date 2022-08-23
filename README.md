@@ -116,6 +116,7 @@ The above omics.mat data is a multi-layered data with 5062 dimension, 230 sample
     % nearby pixels of characteristic pixels will be populated
     ```
     ![alt text](https://github.com/alok-ai-lab/DeepInsightTab2Image/blob/main/Fig2.png?raw=true)
+    
     `DeepInsightTab2Img`- `Blurring` technique
 
 7.  Convert a validation set or a test set using `model` obtained from (6).
@@ -131,6 +132,7 @@ The above omics.mat data is a multi-layered data with 5062 dimension, 230 sample
     >>  figure; imshow(P);
     ```
     ![alt text](https://github.com/alok-ai-lab/DeepInsightTab2Image/blob/main/Fig3.png?raw=true)
+    
     `deepinsightConv`- plotting Test images
  
 8.  Change the `tsne` distance to `cosine` and apply the same procedure
@@ -140,6 +142,7 @@ The above omics.mat data is a multi-layered data with 5062 dimension, 230 sample
     >>  figure; imshow(XTrain(:,:,:,1)); title('Dist cosine');
     ```
     ![alt text](https://github.com/alok-ai-lab/DeepInsightTab2Image/blob/main/Fig4.png?raw=true)
+    
     `DeepInsightTab2Img`- distance: `cosine`
 
 9.  Many options can be changed according to the requirements. Details of options are given below.
