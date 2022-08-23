@@ -164,9 +164,9 @@ The above omics.mat data is a multi-layered data with 5062 dimension, 230 sample
     
     ```Matlab
     >>  [ImgData, model] = deepinsightConv(data,model,options);
-    options can be
-    'AugSamples': k (defined k>0 to be augmented per class)
-    'Labels': provide labels for validation data (labels_validation)
+    %options can be
+    %'AugSamples': k (defined k>0 to be augmented per class)
+    %'Labels': provide labels for validation data (labels_validation)
     
     >>  [ImgData, model] = deepinsightConv(data,model,'AugSamples',50,'Labels',labels_validation);
     % model.Validation = 
