@@ -172,7 +172,8 @@ The above omics.mat data is a multi-layered data with 5062 dimension, 230 sample
     % model.Validation = 
     %  struct with field
     %  AugSamples:50
-    %.   Labels: px1 categorical 
+    %      Labels: px1 categorical 
+    %   orgLabels: qx1 categorical
     ```
 
 10. Apply 'umap' projection method. Note for 'umap', option 'Dist' is not required. Also note, that 'umap' uses Python or R code. Therefore, first install necessary Python/R packages. For Python the following packages are used `numpy`, `sys` and `umap`.
@@ -246,7 +247,7 @@ The above omics.mat data is a multi-layered data with 5062 dimension, 230 sample
     
     ```Matlab
     >>  [XValidation, model] = deepinsightConv(data_validation,'AugSamples',k,'Labels',labels_validation);
-    % size of XValidation would be M x M x layers x r, 
+    % size of XValidation would be R x C x layers x r, 
     %    where r = number of original validation samples + augmented validation samples
     ```
     
@@ -255,7 +256,7 @@ The above omics.mat data is a multi-layered data with 5062 dimension, 230 sample
     >>  model.Validation
     % struct with feilds
     % AugSamples: k
-    %     Labels: r (original + augmented samples)
+    %     Labels: r (p, original + q, augmented samples)
     %  orgLabels: number of validation samples (before augmentation)
     ```
  
