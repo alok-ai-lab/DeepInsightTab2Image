@@ -210,8 +210,9 @@ The above omics.mat data is a multi-layered data with 5062 dimension, 230 sample
     >>  P = imtile(XTrain(:,:,:,[1,length(Labels)+1));
     >>  figure; imshow(P); title('original and augmented sample');
     ```
+    ![alt text](https://github.com/alok-ai-lab/DeepInsightTab2Image/blob/main/Fig6.png?raw=true)
     
-    
+    `deepinsightTab2Img`- projection method `lda` with augmentated samples
 
 ### Example 1: classification of multi-omics or multi-layered data using DeepInsight3D model
 In this example, multi-omics example data (PDX_Paclitaxel) is used which is stored in DeepInsight3D_pkg/Data folder as 'dataset1.mat'. It is split into the training set and test set. The first layer is RNA seq, second layer is CNA and the third layer is mutation. These layers are first converted to 3D images using the DeepInsight3D converter. Then the CNN net (resnet50) has been trained. The performance evaluation, in terms of accuracy and AUC, are done on the test set of the data.
