@@ -178,6 +178,8 @@ The above omics.mat data is a multi-layered data with 5062 dimension, 230 sample
     >>  subplot(2,1,2);imshow(P2); title(['class ',num2str(double(Labels(numObservations(9))))]);
     ```
     ![alt text](https://github.com/alok-ai-lab/DeepInsightTab2Image/blob/main/Fig5.png?raw=true)
+    
+    Uniform Manifold Approximation and Projection (`umap`) with `PizelSize` 50 x 50
 
 
 ### Example 1: classification of multi-omics or multi-layered data using DeepInsight3D model
