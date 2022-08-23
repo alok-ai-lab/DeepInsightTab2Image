@@ -201,7 +201,7 @@ The above omics.mat data is a multi-layered data with 5062 dimension, 230 sample
     >>  [XTrain, model] = deepinsightTab2Img(data, 'Method','lda','Augment','yes','Labels',Labels);
     % This will augment around m= 500 samples per class. To change this number apply ...'AugSamples',m ...
     % size of XTrain is 224 x 224 x 3 x 1222
-    >>  P = imtile(XTrain(:,:,:,[1,length(Labels)+1));
+    >>  P = imtile(XTrain(:,:,:,[1,length(Labels)+1]));
     >>  figure; imshow(P); title('original and augmented sample');
     ```
     ![alt text](https://github.com/alok-ai-lab/DeepInsightTab2Image/blob/main/Fig6.png?raw=true)
