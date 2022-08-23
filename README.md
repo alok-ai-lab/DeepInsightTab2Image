@@ -59,10 +59,10 @@ The above omics.mat data is a multi-layered data with 5062 dimension, 230 sample
     >>  rng('default');
     >>  inx = randperm(size(data,2));
     >>  inx = inx(1:10);
-    >>  dataXts = data(:,r,:); % 5062 x 10 x 3 single
-    >>  data(:,r,:) = [];      % 5062 x 220 x 3 single
-    >>  LabelsXts = Labels(r); % 10 x 1 categorical
-    >>  Labels(r) = [];        % 220 x 1 categorical
+    >>  dataXts = data(:,inx,:); % 5062 x 10 x 3 single
+    >>  data(:,inx,:) = [];      % 5062 x 220 x 3 single
+    >>  LabelsXts = Labels(inx); % 10 x 1 categorical
+    >>  Labels(inx) = [];        % 220 x 1 categorical
     ```
   
 4.  Execute Tab2Img function on `data`
