@@ -246,8 +246,8 @@ The above omics.mat data is a multi-layered data with 5062 dimension, 230 sample
     If it is required to augment validation data as well then `deepinsightConv` can be used as
     
     ```Matlab
-    >>  [XValidation, model] = deepinsightConv(data_validation,'AugSamples',k,'Labels',labels_validation);
-    % size of XValidation would be R x C x layers x r, 
+    >>  [XValidation, model] = deepinsightConv(data_validation,model,'AugSamples',k,'Labels',labels_validation);
+    % size of XValidation would be R x C x layers x r, and model is generated from deepinsightTab2Img
     %    where r = number of original validation samples + augmented validation samples
     ```
     
