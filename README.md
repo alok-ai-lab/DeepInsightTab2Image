@@ -1,5 +1,5 @@
 # DeepInsightTab2Image
-DeepInsight Tab2Image coder: a simple and easy way of converting tabular data to images for convolutional neural networks (CNNs). Improvements are added. `One line function` to convert tabular data to image samples using:
+DeepInsight Tab2Image coder: Improvement in performance and easy to integrate this coder. A simple way of converting tabular data to images for convolutional neural networks (CNNs). Additions of new functions (such as blurring technique) increase the classification accuracy of a CNN model used. `One line function` to convert tabular data to image samples using:
 
 `[XTrain,model] = deepinsightTab2Img(data,options)`; 
 
