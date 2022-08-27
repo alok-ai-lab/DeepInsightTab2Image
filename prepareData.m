@@ -4,6 +4,12 @@ function [XTrain,model] = prepareData(Parm,model)
 Q.Method=Parm.Method;
 if strcmp(lower(Q.Method),'lda')==1
     Q.Labels=Parm.Labels;
+    if Parm.FeatureMap==0
+        disp('option FeatureMap=0 with LDA is not possible!');
+        disp('change FeatureMap or change the projection Method');
+        XTrain=[];
+        return
+    end
 end
 Q.Max_Px_Size = Parm.PixelSize;
 Q.SnowFall = double(strcmp(Parm.SnowFall,'yes'));
