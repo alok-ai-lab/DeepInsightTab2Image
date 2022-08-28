@@ -56,7 +56,11 @@ elseif strcmp(lower(method),'vector')==1
             Sb=Sb+numel(find(Labels==j))*(mu-m(:,j))*(mu-m(:,j))';
             Sw=Sw+(data(:,find(Labels==j))-m(:,j))*(data(:,find(Labels==j))-m(:,j))';
         end
-        [W,D]=svd(inv(Sw)*Sb,0);
+        if rank(Sw)<size(Sw,1)
+            [W,D]=svd(pinv(Sw)*Sb,0);
+        else
+            [W,D]=svd(inv(Sw)*Sb,0);
+        end
         W=W(:,1:2);
         J=W'*data;
     end
