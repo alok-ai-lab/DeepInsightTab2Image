@@ -17,7 +17,7 @@ To convert test or validation data use `X = deepinsightConv(data,model)`, where 
 7) Augmentation of data is possible.
 
 
-### DeepInsight3D tested on:
+### DeepInsightTab2Image tested on:
 OS: Linux Ubuntu 20.04;
 Matlab version: 2022a;
 GPU A100 (2 parallel);
